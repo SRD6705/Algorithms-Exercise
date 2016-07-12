@@ -1,0 +1,63 @@
+
+<!--1) Turn these problems in as six .html files in one folder: “algorithms_1.html”, “algorithms_2.html”, etc.
+
+Given a string, for example, “Hello World”, write some code to reverse that string (“dlroW olleH”).
+
+(Hint: try using the Array.reverse() method! But, if you do, try solving it just using looping as well). -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Question 1 </title>
+</head>
+<body>
+<script>
+
+
+// var a =["H","e","l","l", "o", "W","o", "r","l","d"];
+// var b = a.reverse();
+// console.log(b);
+
+var a = "Hello World".split("").reverse()
+var b = []
+for (var i = 0; i < a.length; i++) {
+b.push(a[i]);
+}
+
+console.log(b);
+
+// var str = prompt("what is a string");
+
+// var splitStr = str.split("");
+
+// ["h", "e", "l", "l","o"]
+
+// console.log(splitStr);
+// splitStr.reverse();
+// var reversed = splitStr.join("");
+
+// we cannot change a string  (its a immuatable data type). When we have a string, it cannot be another string. Numbers and booleans are mutable. A string is really an array of characters. 
+
+// var reversed = [];
+// var index = splitStr.length - 1;
+
+// while (index >= 0) {
+	// reversed.push(splitStr)[index];
+
+}
+
+// console.log(reversed.join (""));
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -8,20 +8,42 @@
 <script>
 
 
-var fib1 = 0; 
-var fib2 = 1;
-var c = a + b;
+// var fib1 = 0; 
+// var fib2 = 1;
+// var c = a + b;
 
-for (var f1 <= 2; i < 2000000; i++){
-}if (f1 % 2 == 0){
-		a + b;
+// for (i <= 2; i < 2000000; i++){
+// }if (fib1 % 2 == 0){
+// 		a + b;
+
+// }
+// console.log(c);
+
+function createFibNums(){
+
+	var arr = [1,1];
+	for(var i = 2; i < 2000000; i++){
+	var update = arr[i - 1] + arr[i - 2];
+	arr.push(update);
+	}
+
+	return arr;
 
 }
-console.log(a);
 
+function fibEven(){
+	var sum = 0;
+	var fibarr = createFibNums();
+	for(var i = 0; i < fibarr.length; i++){
+		if (fibarr[i] % 2 == 0){
+			sum = sum + fibarr[i];
+		}
+	}
 
+	return sum;
 
-
+}
+console.log(fibEven());
 
 
 

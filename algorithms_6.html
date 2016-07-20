@@ -2,11 +2,35 @@
 <html>
 <head>
 	<title></title>
+	<style>
+		#story{
+			width:800px;
+			height: auto;
+			border: 2px solid black;
+		}
+
+	</style>
 </head>
 <body>
 
+<center>
+<h1>DRAGON ROOM</h1><br>
+<i>type in west, north, south, east to go from room to room</i><br>
+
+<div id="story">
+	
+<br> are you ready to start your adventure?
+type start to explore
+
+
+</div><br>
+
+
+
+<input type="text" id="direction"><button onclick="game()">click me</button>
+</center>
 <script>
-Write a short adventure game.
+// Write a short adventure game.
 
 // In the style of Colossal Cave Adventure, write a three-room adventure game. The user should start in one room: “You are in a room. There is an exit to the north and to the west”. Try using the prompt text for output (prompt ("you are in a room..."))
 
@@ -17,6 +41,76 @@ Write a short adventure game.
 // When they get past the dragon (“go north” in the north room while holding the shield), they win the game.
 
 // If you are feeling adventurous, try adding even more rooms, items, and challenges to this game!
+
+var story = document.getElementById("story");
+var shield = false;
+var current = "start";
+var win = false;
+
+
+ function game(direction){
+ 	direction = document.getElementById("direction").value;
+ 	console.log(direction);
+
+	var north = "you chose north room";
+	var west = "you chose west room";
+	var ws = "west room with shield";
+
+	if (direction == "start"){
+		story.innerHTML = "You're in a room. There is an exit to the north and to the west. Please choose north to enter north room or west to enter west room.";
+			} else if (direction == "west" && current == "start"){
+		story.innerHTML =  west + " you're in " + ws + "you picked up the shield";
+			shield = true;
+			current = "shield";
+	}else if( direction == "north" &&  current == "start"){
+			current = "dragon";
+			if (shield){
+				story.innerHTML = "you have conquered the dragon. Go north to escape";
+				win = true;
+			}else{
+				story.innerHTML = "you're too afraid so you should go back to safety";
+			}
+	}else if (current = "shield" && direction == "east"){
+			current = "start";
+			story.innerHTML = "you're finally back in the start room...now head north towards the dragon";
+	}else if(win){
+		story.innerHTML = "congratulations, you've escaped! If you want to play again then you'll need to type start";
+		win = false;
+		shield = false;
+		current = "start";
+	}else{
+		story.innerHTML = "you've made a bad choice. Try again!"
+	}
+
+}
+
+
+
+
+	// if (adeventure == "north"){
+	// 		if(shield){
+
+	// 		}else{
+	// 	adventure = prompt(north + "Look out for the dragon. Please exit to the main room. Type back to go back to the main room or exit to exit the north room");
+	// 		}
+	// }
+
+
+
+
+	// else if (back) {
+	// 	prompt("Great, you're back in the main room. Please type west to enter the west room and retrieve the shield");
+	// else if (west){
+	// 	prompt("You're in the west room. Please type shield to confront the dragon or exit to run away. Please type dragon to go back to the north room or exit");
+	// else{
+	// 	prompt("You're too scared to take on the dragon. Maybe next time!");
+	// 	}
+
+	
+
+
+
+
 
 
 
